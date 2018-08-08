@@ -1,6 +1,6 @@
 # Mandelbrot
 
-Mandelbrot is a program written is C++, using SDL2.
+Mandelbrot is a program written is C++, using SDL2 and parallelization with OpenMP. 
 
 ## Getting Started
 
@@ -50,4 +50,3 @@ Now, you should see the executable in the build file. If you run the executable,
 ## Authors
 
 * **Biró Enikő** - [BiroEniko](https://github.com/biroeniko)
-
