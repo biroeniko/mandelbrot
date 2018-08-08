@@ -13,7 +13,7 @@ The basic requirements for building the executable are:
 * CMake 2.8+
 * a c++ compiler
 * make
-* SLD2
+* SDL2
 
 #### Installation on Ubuntu
 
