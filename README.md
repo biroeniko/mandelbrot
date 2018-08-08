@@ -40,6 +40,8 @@ Now you can build the binary by running:
 ```
 make
 ```
+Now, you should see the executable in the build file. If you run the executable, the application should look like this:
+![](https://github.com/biroeniko/mandelbrot/blob/master/img/demo.png)
 
 ## Built With
 
