@@ -46,6 +46,7 @@ Now, you should see the executable in the build file. If you run the executable,
 ## Built With
 
 * [SDL2](https://www.libsdl.org/) - used for display and control
+* [OpenMP](https://www.openmp.org/) - used for creating multiple threads for the tasks (pixel color calculation)
 
 ## Authors
 
