@@ -1,3 +1,10 @@
+/* Copyright (C) 2016 Biro Eniko - All Rights Reserved
+ * You may use, distribute and modify this code under the
+ * terms of the license.
+ * This file is subject to the terms and conditions defined in
+ * file 'LICENSE.txt', which is part of this source code package.
+ */
+
 #include <iostream>
 #include <SDL2/SDL.h>
 
@@ -44,7 +51,7 @@ void Quit()
 
 void CalculatePixel(int x, int y, double midX, double midY, double alt)
 {
-    // imaginarius, [-1;1] intervallum szerinti leptek
+    // based on the [-1;1] interval
     double lat = windowRect.w * alt / windowRect.h;
 
     double cR = (x * (alt / windowRect.h)) + (midX - lat / 2.0);
@@ -65,7 +72,7 @@ void CalculatePixel(int x, int y, double midX, double midY, double alt)
         iterNum++;
     }
 
-    /*fekete-feher
+    /* black and white
     if (iterNum == iterMax)
     SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
     else
@@ -103,20 +110,21 @@ void RenderImage(double midX, double midY, double alt)
     SDL_RenderPresent(renderer);
 }
 
+// very basic palette
 /*
 void fillPalette()
 {
-int base = 40;
-for (int i = 0; i < iterMax; i++)
-{
-pal[i].r = (base + i) / 3;
-pal[i].g = (base + i) / 2;
-pal[i].b = base + i;
-}
+    int base = 40;
+    for (int i = 0; i < iterMax; i++)
+    {
+        pal[i].r = (base + i) / 3;
+        pal[i].g = (base + i) / 2;
+        pal[i].b = base + i;
+    }
 }
 */
 
-// http://www.gamedev.net/topic/344763-better-gradients-resolved/
+// palette inspiration from: http://www.gamedev.net/topic/344763-better-gradients-resolved/
 void fillPalette()
 {
     int startR = 10;
@@ -156,9 +164,8 @@ int main(int argc, char* argv[])
     fillPalette();
     RenderImage(midX, midY, alt);
 
-
     bool loop = true;
-    int scale = 10;				// hany pixelenkent
+    int scale = 10;				// pixel number
     while (loop)
     {
         SDL_Event event;
